@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(217, 236, 238);
+}
+
+h1 {
+    color: red;
+}
+  
+table, td {
+    border: 1px solid black; 
+    border-collapse: collapse;
+}
+
+/* used for show & hide */
+#me1{
+    visibility: visible; 
+    color: red;
+}
+#me2{
+    visibility: hidden;
+}
+
+#me3{
+    color: red;   
+}
