@@ -1,2 +1,2 @@
-# lakelandoc
-Outlier web pages for club
+# G.Capper
+Outlier web pages
