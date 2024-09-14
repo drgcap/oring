@@ -55,7 +55,7 @@
 
 <!-- function to call functions that get, parse & display news feed-->
         async function loadRSSFeed() {
-            const rssUrl = 'http://feeds.bbci.co.uk/news/world/rss.xml';
+            const rssUrl = 'https://feeds.bbci.co.uk/news/rss.xml';
             <!-- 'https://www.britishorienteering.org.uk/rss'; -->
             const rssText = await fetchRSSFeed(rssUrl);
             const xmlDoc = parseRSS(rssText);
