@@ -11,7 +11,7 @@
 
     <script>
 
-//<!-- function to get a news feed -->
+<!-- function to get a news feed -->
         async function fetchRSSFeed(url) {
             try {
                 const response = await fetch(url);
@@ -25,14 +25,14 @@
             }
         }
 
-//<!-- function to parse news need -->
+<!-- function to parse news need -->
         function parseRSS(rssText) {
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(rssText, 'text/xml');
             return xmlDoc;
         }
 
-//<!-- function to return news feed items as html for display -->
+<!-- function to return news feed items as html for display -->
         function displayRSSFeed(xmlDoc) {
             const items = xmlDoc.querySelectorAll('item');
             const feedContainer = document.getElementById('rss-feed');
@@ -53,18 +53,19 @@
             feedContainer.innerHTML = html;
         }
 
-//<!-- function to call functions that get, parse & display news feed-->
+<!-- function to call functions that get, parse & display news feed-->
         async function loadRSSFeed() {
             const rssUrl = 'http://feeds.bbci.co.uk/news/world/rss.xml';
-            //<!-- 'https://www.britishorienteering.org.uk/rss'; -->
+            <!-- 'https://www.britishorienteering.org.uk/rss'; -->
             const rssText = await fetchRSSFeed(rssUrl);
             const xmlDoc = parseRSS(rssText);
             displayRSSFeed(xmlDoc);
         }
 
-//<!-- news feed -->
+<!-- news feed -->
 	loadRSSFeed();
 
     </script>
+	version 10.58
 </body>//
 </html>
