@@ -26,7 +26,7 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         feedcontainer.innerHTML  =  document.getElementById("myscript").innerHTML; 
                  
         feedcontainer = document.getElementById('rss-feed');
-        testcontainer = document.getElementById('test');
+        
         feed = document.getElementById("myscript").innerHTML;
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(feed, 'text/xml');
@@ -48,10 +48,11 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         feedContainer.innerHTML = html; 
        
 -->
-     testContainer.innerHTML = "testStr";
+    testcontainer = document.getElementById('test');
+    testContainer.innerHTML = "testStr";
     </script>
 
-version 15 sep 14.39
+version 15 sep 14.42
     
 
 </body>
