@@ -21,12 +21,30 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
     <script id="myscript" src="//rss.bloople.net/?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&showtitle=false&type=js">
         
         feedcontainer = document.getElementById('rss-feed');
-        feedcontainer.innerHTML  =  document.getElementById("myscript").innerHTML;
+        feed = document.getElementById("myscript").innerHTML;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(feed, 'text/xml');
+        const items = xmlDoc.querySelectorAll('item');
+        let html = '';
+
+        items.forEach(item => {
+            const title = item.querySelector('title').textContent;
+            const link = item.querySelector('link').textContent;
+            const description = item.querySelector('description').textContent;
+
+            html += `
+                <div class="rss-item">
+                    <h2><a href="${link}" target="_blank">${title}</a></h2>
+                    <p>${description}</p>
+                </div>
+            `;
+        });
+        feedContainer.innerHTML = html; 
 
         
     </script>
 
-version 15 sep 12.21
+version 15 sep 13.47
 
 </body>
 </html>
