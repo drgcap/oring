@@ -19,7 +19,10 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         
 <h2> BO feed ...</h2>
     <script id="myscript" src="//rss.bloople.net/?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&showtitle=false&type=js">
-        
+        <!--         
+        feedcontainer = document.getElementById('rss-feed');
+        feedcontainer.innerHTML  =  document.getElementById("myscript").innerHTML; 
+        -->         
         feedcontainer = document.getElementById('rss-feed');
         feed = document.getElementById("myscript").innerHTML;
         const parser = new DOMParser();
@@ -34,7 +37,7 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
 
             html += `
                 <div class="rss-item">
-                    <h2><a href="${link}" target="_blank">${title}</a></h2>
+                    <h2 style="color:darkgreen;"><a href="${link}" target="_blank">${title}</a></h2>
                     <p>${description}</p>
                 </div>
             `;
@@ -44,7 +47,7 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         
     </script>
 
-version 15 sep 13.47
+version 15 sep 13.51
 
 </body>
 </html>
