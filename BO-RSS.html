@@ -55,7 +55,7 @@
 
 <!-- function to call functions that get, parse & display news feed-->
         async function loadRSSFeed() {
-            const rssUrl = '//rss.bloople.net/?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&showtitle=false&type=js"';
+            const rssUrl = 'http://rss.bloople.net/?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&showtitle=false&type=js';
             const rssText = await fetchRSSFeed(rssUrl);
             const xmlDoc = parseRSS(rssText);
             displayRSSFeed(xmlDoc);
@@ -66,6 +66,6 @@
 
     </script>
 
-	15 sept version 11:29
+	15 sept version 11:32
 </body>
 </html>
