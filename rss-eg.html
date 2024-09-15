@@ -21,10 +21,14 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         </script>
     </div>
     
+    <div id = 'news'></div>
+    
     <script>         
         feedcontainer = document.getElementById('news');
-        feedcontainer.innerHTML  =  document.getElementById("rss-feed").innerHTML; 
-            <!--     
+        let html = document.getElementById('rss-feed').innerHTML; 
+        feedcontainer.innerHTML  =  'yes' + html;
+        
+        <!--     
         feedcontainer = document.getElementById('rss-feed');
         
         feed = document.getElementById("myscript").innerHTML;
@@ -47,10 +51,11 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         });
         feedContainer.innerHTML = html; 
         -->
+            
     </script>
-    <div id = 'news'></div>
 
-version 15 sep 17.15
+
+version 15 sep 17.20
     
 
 </body>
