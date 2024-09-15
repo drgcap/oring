@@ -8,6 +8,7 @@
 <body>
     <h1>Testing RSS feeds ...</h1>
     <div id="rss-feed"></div>  
+    <div id="test"></div>
 <!-- 
 use open source s/ware to convert feed to html 
 Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
@@ -21,9 +22,11 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
     <script id="myscript" src="//rss.bloople.net/?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&showtitle=false&type=js">
         <!--         
         feedcontainer = document.getElementById('rss-feed');
+        testStr = document.getElementById('test');
         feedcontainer.innerHTML  =  document.getElementById("myscript").innerHTML; 
         -->         
         feedcontainer = document.getElementById('rss-feed');
+        testcontainer = document.getElementById('test');
         feed = document.getElementById("myscript").innerHTML;
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(feed, 'text/xml');
@@ -32,9 +35,9 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
 (let i = 0; i < 5; i++)
         items.forEach(item => {
             const title = item.querySelector('title').textContent;
+            testStr = title;
             const link = item.querySelector('link').textContent;
             const description = item.querySelector('description').textContent;
-            ${title}.getElementById('title').style.color = 'green'>
             html += `
                 <div class="rss-item">
                     <h2><a href="${link}" target="_blank">${title}</a></h2>
@@ -43,11 +46,11 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
             `;
         });
         feedContainer.innerHTML = html; 
+        testContainer.innerHTML = testStr;
 
-        
     </script>
 
-version 15 sep 14.11
+version 15 sep 14.25
     
 
 </body>
