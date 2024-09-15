@@ -55,9 +55,7 @@
 
 <!-- function to call functions that get, parse & display news feed-->
         async function loadRSSFeed() {
-            const rssUrl = 'https%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Frss.xml';
-		 <!--    'https://feeds.bbci.co.uk/news/rss.xml';
-            'https://www.britishorienteering.org.uk/rss'; -->
+            const rssUrl = '//rss.bloople.net/?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&showtitle=false&type=js"';
             const rssText = await fetchRSSFeed(rssUrl);
             const xmlDoc = parseRSS(rssText);
             displayRSSFeed(xmlDoc);
