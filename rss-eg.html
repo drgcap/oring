@@ -29,15 +29,16 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         const xmlDoc = parser.parseFromString(feed, 'text/xml');
         const items = xmlDoc.querySelectorAll('item');
         let html = '';
-
+(let i = 0; i < 5; i++)
         items.forEach(item => {
+            item.getElementById('title').style.color = 'green'>
             const title = item.querySelector('title').textContent;
             const link = item.querySelector('link').textContent;
             const description = item.querySelector('description').textContent;
 
             html += `
                 <div class="rss-item">
-                    <h2 style="color:green;"><a href="${link}" target="_blank">${title}</a></h2>
+                    <h2><a href="${link}" target="_blank">${title}</a></h2>
                     <p>${description}</p>
                 </div>
             `;
@@ -47,7 +48,8 @@ Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
         
     </script>
 
-version 15 sep 13.51
+version 15 sep 14.08
+    
 
 </body>
 </html>
