@@ -21,9 +21,9 @@
     function myFunction(xml) {
       var i;
       var xmlDoc = xml.responseXML;
-      var x = xmlDoc.getElementsByTagName("title");
+      var x = xmlDoc.getElementsByTagName("item");
       for (i = 0; i <x.length; i++) {
-        str += x[i].childNodes[0].nodeValue +
+        str += x[i].getElementsByTagName("title").childNodes[0].nodeValue +
         "<br>"
       }
       document.getElementById("rss-feed").innerHTML = str;
@@ -37,7 +37,7 @@
 
 
 
-version 16 sep 10.36
+version 16 sep 12.05
     
 
 </body>
