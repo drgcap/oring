@@ -4,58 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Feed Example</title>
+    <script>
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+        }
+      };
+      xhttp.open("GET", "https://www.britishorienteering.org.uk/newsrss.php", true);
+      xhttp.send();
+    }
+        
+    function myFunction(xml) {
+      var i;
+      var xmlDoc = xml.responseXML;
+      var x = xmlDoc.getElementsByTagName("item");
+      for (i = 0; i <x.length; i++) {
+        str += x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+        "<br>"
+      }
+      document.getElementById("rss-feed").innerHTML = table;
+    }        
+    </script>
 </head>
 <body>
     <h1>Testing RSS feeds ...</h1>
-<!-- 
-use open source s/ware to convert feed to html 
-Copyright (c) 2007-2017 Brenton Fletcher (http://blog.bloople.net i@bloople.net)
--->
-<!-- BBC feed
-   <h2>BBC feed ...</h2>
-<script src="//rss.bloople.net/?url=https%3A%2F%2Ffeeds.bbci.co.uk%2Fnews%2Frss.xml&showtitle=false&type=js"></script>
--->
-        
-    <div id = 'rss-feed' hidden ><h2>BO feed ...</h2>
-        <script id="myscript" src="//rss.bloople.net/?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&showtitle=true&type=js">
-        </script>
-    </div>
-    
-    <div id = 'news'></div>
-    
-    <script>         
-        feedcontainer = document.getElementById('news');
-        let html = document.getElementById('rss-feed').innerHTML; 
-        feedcontainer.innerHTML  =  'yes' + html;
-        
-        <!--     
-        feedcontainer = document.getElementById('rss-feed');
-        
-        feed = document.getElementById("myscript").innerHTML;
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(feed, 'text/xml');
-        const items = xmlDoc.querySelectorAll('item');
-        let html = '';
-(let i = 0; i < 5; i++)
-        items.forEach(item => {
-            const title = item.querySelector('title').textContent;
-            testStr = title;
-            const link = item.querySelector('link').textContent;
-            const description = item.querySelector('description').textContent;
-            html += `
-                <div class="rss-item">
-                    <h2><a href="${link}" target="_blank">${title}</a></h2>
-                    <p>${description}</p>
-                </div>
-            `;
-        });
-        feedContainer.innerHTML = html; 
-        -->
-            
-    </script>
+    <button type="button" onclick="loadDoc()">Click me</button>
+    <div id = 'rss-feed'>Click Button & Parsed BO feed will appear here</div>
 
 
-version 15 sep 17.20
+
+version 16 sep 10.36
     
 
 </body>
