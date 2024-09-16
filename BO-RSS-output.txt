@@ -1,7 +1,4 @@
-<html>
-<head></head>
-<body>
-<code>
+
   <rss version="0.91">
   <channel>
   <title>British Orienteering News</title>
@@ -124,6 +121,3 @@
   </item>
   </channel>
   </rss>
-</code>
-</body>
-</html>
