@@ -19,12 +19,12 @@
     function myFunction(xml) {
       var i;
       var xmlDoc = xml.responseXML;
-      var x = xmlDoc.getElementsByTagName("item");
+      var x = xmlDoc.getElementsByTagName("title");
       for (i = 0; i <x.length; i++) {
-        str += x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+        str += x[i].childNodes[0].nodeValue +
         "<br>"
       }
-      document.getElementById("rss-feed").innerHTML = table;
+      document.getElementById("rss-feed").innerHTML = str;
     }        
     </script>
 </head>
