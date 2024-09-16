@@ -13,6 +13,8 @@
         }
       };
       xhttp.open("GET", "BO-RSS-output.txt", true);
+      xhttp.responseType = 'document'; 
+      xhttp.overrideMimeType('text/xml');
       xhttp.send();
     }
         
