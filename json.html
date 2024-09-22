@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>  
+    <h2>Fetch a JSON file with XMLHttpRequest</h2>
+    <p id="demo"></p>
+    <script>
+    function myFunc(myObj) {
+    document.getElementById("demo").innerHTML = "test" ;
+    <!--myObj.name;-->
+
+    const xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  document.getElementById("demo").innerHTML = myObj.name;
+}
+xmlhttp.open("GET", "https://www.britishorienteering.org.uk/datafeed.php?pg=rankings&club=0&assoc=0&gender=&age=-1&paging=0");
+xmlhttp.send();
+
+    }
+    </script>
+    <script>
+
+        myFunc(5);
+    </script>
+
+
+    </body>
+</html>
