@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navbar .icon {
+            display: none;
+        }
+
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links a {
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .navbar-links a {
+                text-align: left;
+                padding: 10px;
+                border-top: 1px solid #444;
+            }
+
+            .navbar .icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .navbar-links.active {
+            display: flex;
+        }
+
+        .icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <div class="navbar-links" id="navbarLinks">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var navbarLinks = document.getElementById("navbarLinks");
+            navbarLinks.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
