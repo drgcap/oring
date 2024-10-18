@@ -1,0 +1,277 @@
+/* 
+    CSS for demo SROC website 
+    version 18/10/24 Validated
+    G.Capper
+*/
+
+/* base elements */
+
+* { /* applies to eveything */
+    box-sizing: border-box;
+}
+
+body { /* fonts to be used */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    width: 100%;
+}
+
+/* Style the header */
+.header {
+	text-align: center;
+	width: 100%;
+}
+	
+.header td p {
+	font-family: Arial, serif;
+	font-weight: bold;
+	text-align: center;
+	color: #000080;
+	font-size: 18pt;
+	padding: 0px;
+	margin:0;
+	letter-spacing: 0.1em;
+}
+
+.header p.smaller {
+	font-size: 12pt;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.imgsmall {
+			border: 0;
+			width: 57px; 
+			height: 61px;
+}
+
+/* Style the flex container */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0%; 
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 5px;
+}
+
+.single-column {
+    flex: 1; /* Takes the full width */
+    padding: 5px;
+}
+
+.two-columns {
+    display: flex;
+    justify-content: space-between; /* Ensures two columns are side by side */
+    gap: 5px; /* Adds space between columns */
+}
+
+.two-columns > div {
+    flex: 1;
+    background: white;
+}
+
+.column {
+    padding: 5px;
+    height: 2000px;
+  }
+  
+/* Left column */
+.column.side {
+    flex: 1;
+    order: 1;
+}
+
+/* Right column */
+.column.right {
+flex: 6;
+order: 2;
+}
+
+/* navbar */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 10% 90% 0% 0%;
+    gap: 10px;
+    background: linear-gradient(to right, green, black);
+    padding: 10px;
+}
+
+.home-link {
+    display: block;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.home-link a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar-links a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: end;
+}
+
+.navbar-links-phone {
+    display: none;
+}
+
+/* left column of images & feeds */
+
+.image-container { /* container image with text overlay */
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+display: block;
+}
+
+.text-overlay { /* text on fixtures image */
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: darkgreen;
+background: transparent;
+padding: 10px;
+border-radius: 5px;
+}
+
+img { /* set image size & no border */
+border: 0;
+width: 300px;
+height: 100px
+}
+
+/* style the feeds */
+.rss-feed {
+  width: 300px;
+  height: 450px;
+  border-color: black;
+}
+
+.valid {
+    border:0;
+    width: 100px;
+    height: 40px;
+}
+
+/* style main column, intially news but also pages selected from menu */
+#srocnews{
+  width: 100%;
+  height: 2000px;
+}
+
+/* Style the footer */
+.footercontainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-left: 325px;
+    padding-right: 25px;
+}
+
+/* - - - - - - - RESPOSIVE LAYOUTS - - - - - - - */
+
+/* TABLET-landscape */
+@media (min-width: 768px) and (max-width: 1024px){
+    /* make font smaller on navigation menu so all menu items show */
+    .navbar-links {
+        font-size: smaller;
+    }
+    .home-link {
+        font-size: smaller;
+    }
+}
+
+/* PHONE & TABLET-portrait */
+@media (max-width: 768px) {
+/* set display to one column (stack) */
+    .row {
+    /* -webkit-flex-direction: column; */
+    flex-direction: column;
+    }
+
+    /* set the stack order, configure display */
+    .column.right{
+    order: 2;
+    width: 100%;
+    }
+
+    .column.side{
+    order: 3;
+    width: 100%;
+    }
+
+    .row.single-column.footercontainer{
+        width: 100%;
+        font-size: small;
+        display: block;
+        padding: 10px;
+        padding-top: 10px;
+    }
+
+    .grid-container {
+        grid-template-columns: 90% 0% 0% 10%;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        padding-top: 5px;
+    }
+        
+    .burger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: white;
+    }
+
+    .navbar-links a {
+        text-align: left;
+        padding: 10px;
+    }
+
+    .navbar-links {
+        display: none
+    }
+
+    .navbar-links-phone a {
+        color: white;
+        text-decoration: none;
+    }
+
+   .navbar-links-phone.active {
+        display: flex;
+        flex-direction: column ;
+        align-items: end;
+        padding-right: 20px;
+        padding-bottom: 5px;
+        background: linear-gradient(to right, green, black);
+    }
+    .rss-feed{
+        width: 100%;
+    }
+
+}   /* end of style sheet */

@@ -1,0 +1,139 @@
+<!-- 
+    HTML for demo SROC website 
+    version 18/10/24 validated 
+    G.Capper
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SROC vOct24</title>
+    <meta charset="utf-8"> <!-- set to standard character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- set up to use screen width as per device-->
+    <link rel="stylesheet" href="build3.css">
+</head>
+
+<body>
+ 
+ <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->   
+
+        <!-- HEADER -->
+<div class="header">
+    <table>
+        <tr>
+            <td><img class="imgsmall" src="images/60logo.jpg" alt="sroc 60 logo"></td>
+            <td>
+                <p style="font-style: italic;">SROC - Red Rose Orienteers</p>
+                <p class="smaller" >South Ribble Orienteering Club, England&#39;s first, celebrating 60 years 1964 - 2024</p>
+            </td>
+            <td><img class="imgsmall" src="images/60logo.jpg" alt="sroc 60 logo"></td>
+        </tr>
+    </table>
+</div>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- TOP NAVIGATION BAR -->
+<div class="container">
+    <div class="grid-container">
+        <div class="home-link"><a href="" >Home</a></div>
+        <div class="navbar-links">
+            <a target="main" href="">Join</a>
+            <a target="_blank" href="https://www.britishorienteering.org.uk/newcomers_guide">Newcomers</a>
+            <a target="main" href="menu4/index4.html" >Club</a>
+            <a target="_blank" href="https://www.facebook.com/groups/189159560445/">Facebook</a>
+            <a target="main" href="menu6/fixtures/viewfixtures.html">Fixtures</a>
+            <a target="main" href="menu7/menu7_1/2024/index7_1.html">Results</a>
+            <a target="main" href="menu8/index8.html">Blodslitet</a>
+            <a target="main" href="menu9/index9.html">Links</a>
+        </div>
+        <!-- burger hidden on desktop -->
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- menu hidden on desktop used on mobile when burger clicked -->
+    <div class="navbar-links-phone">
+        <a target="main" href="">Join Us</a>
+        <a target="_blank" href="https://www.britishorienteering.org.uk/newcomers_guide">Newcomers</a>
+        <a target="main" href="menu4/index4.html" >Club</a>
+        <a target="_blank" href="https://www.facebook.com/groups/189159560445/">Facebook</a>
+        <a target="main" href="menu6/fixtures/viewfixtures.html">Fixtures</a>
+        <a target="main" href="menu7/menu7_1/2024/index7_1.html">Results</a>
+        <a target="main" href="menu8/index8.html">Blodslitet</a>
+        <a target="main" href="menu9/index9.html">Links</a>
+    </div>
+    <script>
+        // event listener to set navigation bar active/inactive on burger icon click
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.navbar-links-phone').classList.toggle('active');
+        });
+    </script>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- LEFT SIDE COLUMN OF IMAGES -->
+    <div class="row two-columns">
+
+       <div class="column side">
+            <div class="image-container"><a href="menu6/fixtures/viewfixtures.html">
+                <img src="images/SROCscroll.jpg" alt="next fixture"></a>
+                <div class="text-overlay">Next event details are shown here</div>
+            </div>
+        
+            <p><a href="https://sroc.org/menu2/2024/Aug/MapRun.htm">
+            <img  src="images/Maprun.png" alt="SROC MapRun"></a></p>
+        
+            <p><a href="https://map.oobrien.com/?p=LA1&amp;d=on&amp;c=All" target="_blank">
+            <img  src="images/Oevents.jpg" alt="Events map" title="Forthcoming events"></a></p>
+        
+            <p ><a href="menu7/menu7_1/2023/SROCnsl.html">
+            <img  src="images/nsl_logo.gif" alt="Night Street League"></a></p>
+        
+            <p><a href="menu2/2014/Apr/Charnley%20Way.html">
+            <img  src="images/Charnley%20Way.jpg" alt="Gerry Charnley Round" title="Gerry Charnley Round"></a></p>
+        
+            <p><a target="_blank" href="https://drive.google.com/file/d/1RnHYGcoc0jwpF47IK3psLoiKes_L4veX/view?usp=sharing">
+            <img  src="images/Otop.jpg" alt="New Club Kit"></a></p>  
+        
+            <p><a href="https://sroclatestnews.blogspot.com/2010/07/your-club-needs-your-old-dibber.html">
+                <img  src="images/Dibbers.gif" alt="dibber"></a></p>
+            
+            <iframe class="rss-feed" 
+                src="https://www.strava.com/clubs/sroc/latest-rides/261474158679483a36cda97bea22308471d52123?show_rides=true">
+            </iframe>
+
+            <iframe class="rss-feed"
+            src="https://embeds.rss2html.net/embed?url=https%3A%2F%2Fwww.britishorienteering.org.uk%2Fnewsrss.php&amp;embed_render_copy_link=0&amp;feed_render_image=0&amp;feed_render_description=0">
+            </iframe>
+
+            <p><img src="images/NatLottery.jpg" alt="National Lottery Award"></p>
+
+            <p><img class="valid" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+            <img class="valid" src="images/valid-html5.png" alt="Valid HTML5!"></p>
+        </div>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- RIGHT NEWS COLUMN or content if selected from menu -->
+        <div class="column right">
+            <iframe id="srocnews" src ="https://sroclatestnews.blogspot.com/"></iframe>
+        </div>
+    </div>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- FOOTER -->
+    <div class="row single-column footercontainer">
+            <div>Can't find the news item you're looking for? It'll be in the Pre-Blog <a href="menu2/index2.html">Archive</a></div>
+            <div> Problems with the website? Contact <a href="mailto:webteam@sroc.org">webteam@sroc.org</a></div>
+    </div>
+</div>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->  
+
+</body>
+</html>
+
+
