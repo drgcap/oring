@@ -201,6 +201,22 @@ height: 100px
     .home-link {
         font-size: smaller;
     }
+    /* reduce image size */
+    img {
+        border: 0px;
+        width: 200px;
+        height: 66px
+    }
+    /* reduce width size of the feeds */
+    .rss-feed {
+        width: 200px;
+        height: 450px;
+        border-color: black;
+    }
+    /* reduce padding on text on fixtures image */
+    .text-overlay { 
+        padding: 5px;
+        }
 }
 
 /* PHONE & TABLET-portrait */
